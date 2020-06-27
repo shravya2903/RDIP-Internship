@@ -1,20 +1,69 @@
 <html>
 	<head>
 		<title>HTML lists</title>
+		<style>
+			ol {
+			  background: #ff9999;
+			  padding: 20px;
+			}
+
+			ul {
+			  background: #ccfffc;
+			  padding: 20px;
+			}
+
+			ol li {
+			  background: #ffe5e5;
+			  padding: 5px;
+			  margin-left: 35px;
+			}
+
+			ul li {
+			  background: #cce5ff;
+			  margin: 5px;
+			}
+			ul.a {
+			  list-style-type: circle;
+			}
+
+			ul.b {
+			  list-style-type: square;
+			}
+
+			ol.c {
+			  list-style-type: upper-roman;
+			}
+
+			ol.d {
+			  list-style-type: lower-alpha;
+			}
+			a:link, a:visited {
+			  background-color: #f44336;
+			  color: white;
+			  padding: 14px 25px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			}
+
+			a:hover, a:active {
+			  background-color: red;
+			}
+		</style>
 	</head>
 <body>
 	<h1><center>Lists in HTML</center></h1>
 	<h2>Courses taken</h2>
-	<ul>
+	<ul class="a">
 		<li>Coursera
-			<ol>
+			<ol class = "c">
 				<li>Big Data Analytics</li>
 				<li>Java for android</li>
 			</ol>
 		</li>
-	</ul><ul>
+	</ul><ul class ="b">
 		<li>Udemy
-			<ol>
+			<ol class="d">
 				<li>Python</li>
 				<li>Data Analytics</li>
 			</ol>

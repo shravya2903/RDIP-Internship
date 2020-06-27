@@ -3,42 +3,55 @@
 		<title>HTML tables</title>
 		<style>
 		table, th, td {
-		  border: 2px solid black; 
+		  border: 4px solid gray; 
+		  outline-style: dashed;
+		  outline-color: red;
+		  outline-width: medium;
 		}
+		td.course{
+		text-align: left;
+		}
+		td.grade{
+		text-align: right;
+		}
+		[class*="head"] {
+		  background: yellow;
+		}
+		tr:nth-child(even) {background-color: #f2f2f2;}
 		</style>
 	</head>
 	<body>
 		<h1><center>Semester Marks</center></h1>
 		<table style="width:80%">
-		  <tr>
+		  <tr class="head">
 			<th>Course Name</th>
 			<th>Course Abbrevation</th>
 			<th>Grade Point</th> 
 		  </tr>
-		  <tr>
-			<td>Design and Analysis of Algorithms</td>
+		  <tr class="head-1">
+			<td class="course">Design and Analysis of Algorithms</td>
 			<td>DAA</td>
-			<td>8</td>
+			<td class="grade">8</td>
 		  </tr>
-		  <tr>
-			<td>Fundametals of Management</td>
+		  <tr class="head-5">
+			<td class="course">Fundametals of Management</td>
 			<td>FM</td>
-			<td>9</td>
+			<td class="grade">9</td>
 		  </tr>
-		  <tr>
-			<td>Software Engineering</td>
+		  <tr class="head-2">
+			<td class="course">Software Engineering</td>
 			<td>SE</td>
-			<td>9</td>
+			<td class="grade">9</td>
 		  </tr>
-		  <tr>
-			<td>Disaster Management</td>
+		  <tr class="head-3">
+			<td class="course">Disaster Management</td>
 			<td>DM</td>
-			<td>9</td>
+			<td class="grade">9</td>
 		  </tr>
-		  <tr>
-			<td>Data Communication and Computer Networks</td>
+		  <tr class="head-4">
+			<td class="course">Data Communication and Computer Networks</td>
 			<td>DCCN</td>
-			<td>8</td>
+			<td class="grade">8</td>
 		  </tr>
 		</table>
 	</body>
