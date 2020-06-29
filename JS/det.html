@@ -1,0 +1,33 @@
+<script>
+<h4>Example getting data from URL query string</h4>
+<p>Gets and shows the value of 'name' and 'id' from this URL:<br>
+ <b>//marplo.net/?name=Mar&amp;id=10</b></p>
+
+<script>
+// Returns an object with elements 'name: value' with data ftom URL (the 'name=value' pairs)
+function getDataUrl(url) {
+ // https://coursesweb.net/javascript
+ var url_data = url.match(/\?([^#]*)/i)[1]; // gets the string between '?' and '#'
+
+ // separate the data into an array, in case the are multiple pairs name=value
+ var ar_url_data = url_data.split('&');
+
+ // traverse the array, and adds into an object elements name:value
+ var data_url = {};
+ for(var i=0; i<ar_url_data.length; i++) {
+ var ar_val = ar_url_data[i].split('='); // separate name and value from each pair
+ data_url[ar_val[0]] = ar_val[1];
+ }
+
+ return data_url;
+}
+
+var url = window.location;
+var data_url = getData(url);
+for(var i=0;i<data_url.length;i++){
+var name=data_url[0];
+var val=data_url[1];
+document.write(name+":"+val);
+}
+
+</script>
