@@ -1,0 +1,110 @@
+<script type="text/javascript" >
+function formValidation(oEvent) { 
+oEvent = oEvent || window.event; 
+var txtField = oEvent.target || oEvent.srcElement; 
+
+var t1ck=true;
+var msg=" ";
+if(document.getElementById("t1").value.length < 3 )
+{ 
+t1ck=false;
+msg = msg + "Your name should be minimun 3 char length <br>";
+}
+var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+var name = document.getElementById("t1").value;
+if(!regName.test(name)){
+    t1ck=false;
+msg = msg +'Invalid name given.<br>';
+}
+var regName = /^[0-9]+$/;
+var name = document.getElementById("t2").value;
+if(!regName.test(name)){
+    t1ck=false;
+msg = msg +'Invalid phone number given.<br>';
+}
+
+if(!document.getElementById("r1").checked && !document.getElementById("r2").checked){ t1ck=false;msg = msg + " Select your Gender<br>";}
+if(document.getElementById("s1").value.length < 3 ){ t1ck=false;msg = msg + " Select one of the games <br>";}
+//if(!document.getElementById("c1").checked ){ t1ck=false;}
+var checkboxs = document.getElementsByName("1");
+			var okay=false;
+			for(var i=0,l=checkboxs.length;i<l;i++){
+				if(checkboxs[i].checked){
+					okay=true;
+					t1ck = true;
+					break;
+				}
+			}
+			if(okay == false){
+				t1ck=false;
+				msg = msg+"Check atleast one checkbox.<br>";
+			}
+
+//alert(msg + t1ck);
+if(okay == true){t1ck = true;}
+if(t1ck){document.getElementById("btnSignUp").disabled = false;
+msg=msg+ " <b> Submit Button is enabled </b>";
+ }
+else{document.getElementById("btnSignUp").disabled = true; 
+msg=msg+ " <b> Submit Button is disabled </b>";
+}// end of if checking status of t1ck variable 
+document.getElementById('my_msg').innerHTML=msg;
+} 
+
+function resetForm(){
+document.getElementById("btnSignUp").disabled = true; 
+var frmMain = document.forms[0]; 
+frmMain.reset();
+}
+
+window.onload = function () { 
+
+var btnSignUp = document.getElementById("btnSignUp"); 
+var btnReset = document.getElementById("btnReset"); 
+
+var t1 = document.getElementById("t1"); 
+var r1 = document.getElementById("r1"); 
+var r2 = document.getElementById("r2"); 
+var s1=document.getElementById("s1");
+var ch1=document.getElementById("c1");
+var ch2=document.getElementById("c2");
+var ch3=document.getElementById("c3");
+var ch4=document.getElementById("c4");
+//var c1=document.getElementByName("c1");
+
+var t1ck=false;
+document.getElementById("btnSignUp").disabled = true;
+t1.onkeyup = formValidation; 
+r1.onclick = formValidation; 
+r2.onclick = formValidation; 
+s1.onclick = formValidation; 
+ch1.onclick = formValidation;
+ch2.onclick = formValidation;
+ch3.onclick = formValidation;
+ch4.onclick = formValidation;
+btnReset.onclick = resetForm;
+}
+</script>
+
+<form method=" post" action="#" name="FC"> 
+<table class='table table-striped my_table' >
+<tr> <td>First Name</td> <td><input type="text" id="t1" name="FirstName"></td> </tr> 
+<tr> <td>Phone Number</td> <td><input type="text" id="t2" name="phno"></td> </tr> 
+<tr><td>Gender</td><td><input type="radio" id="r1" name="gender" value=Male>Male <input type="radio" id="r2" name="gender" value=Female>Female</td></tr> 
+<tr><td>Games Played</td><td>
+<select name="games" id="s1" ><option value=''>Select One</option>
+<option value=Football>FootBall</option>
+<option value=Tenis>Tenis</option>
+<option value=cricket>Cricket</option>
+</select>
+</td></tr> 
+<tr><td>Terms & Condition</td><td><input type=checkbox name=1 value=1 id=c1></td></tr> 
+<tr><td>Terms & Condition</td><td><input type=checkbox name=1 value=2 id=c2></td></tr> 
+<tr><td>Terms & Condition</td><td><input type=checkbox name=1 value=3 id=c3></td></tr> 
+<tr><td>Terms & Condition</td><td><input type=checkbox name=1 value=4 id=c4></td></tr> 
+</table> 
+
+<input type="submit" id="btnSignUp" value="Sign Up!!" /> <input type=reset id=btnReset value=Reset>
+</form> 
+
+</div><div class='col-md-6'>   <div id=my_msg>Button is disabled</div>

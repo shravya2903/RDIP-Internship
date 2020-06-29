@@ -1,0 +1,24 @@
+<html>
+<head>
+<script text="javascript">
+
+function cal(){
+	var n1 = document.getElementById("n1").value;
+	var power = Math.pow(n1,5);
+	var sqroot = Math.sqrt(n1);
+	var absolute = Math.abs(n1);
+	document.write("Power : ",power,"<br>","Square Root : ",sqroot,"<br>","Absolute Value : ",absolute,"<br>");
+	var randomNum = Math.random();
+	document.write("Random Number Generated is: ",randomNum,"<br>");
+	var ceil = Math.ceil(randomNum);
+	var floor = Math.floor(randomNum);
+	document.write("Ceil value : ",ceil,"<br>","Floor value : ",floor);
+}
+</script>
+</head>
+<body>
+<h1>Functions</h1>
+Enter number 1: <input type="text" id="n1"><br><br>
+<input type="submit" value="Calculate" onclick="cal()">
+</body>
+</html>

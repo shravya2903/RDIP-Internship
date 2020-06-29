@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>HTML tables</title>
+		<style>
+		table, th, td {
+		  border: 4px solid gray; 
+		  outline-style: dashed;
+		  outline-color: red;
+		  outline-width: medium;
+		}
+		td.course{
+		text-align: left;
+		}
+		td.grade{
+		text-align: right;
+		}
+		[class*="head"] {
+		  background: yellow;
+		}
+		[class*="grade"]{
+		text-align: right;
+		}
+		tr:nth-child(even) {background-color: #f2f2f2;}
+		</style>
+	</head>
+	<body>
+		<h1><center>Semester Marks</center></h1>
+		<table style="width:80%" id="myTable">
+		  <tr class="head">
+			<th>Course Name</th>
+			<th>Course Abbrevation</th>
+			<th>Grade Point</th> 
+		  </tr>
+		  <tr class="head-1">
+			<td class="course">Design and Analysis of Algorithms</td>
+			<td>DAA</td>
+			<td class="grade" id="sub1">8</td>
+		  </tr>
+		  <tr class="head-5">
+			<td class="course">Fundametals of Management</td>
+			<td>FM</td>
+			<td class="grade" id="sub2">9</td>
+		  </tr>
+		  <tr class="head-2">
+			<td class="course">Software Engineering</td>
+			<td>SE</td>
+			<td class="grade" id="sub3">9</td>
+		  </tr>
+		  <tr class="head-3">
+			<td class="course">Disaster Management</td>
+			<td>DM</td>
+			<td class="grade" id="sub4">9</td>
+		  </tr>
+		  <tr class="head-4">
+			<td class="course">Data Communication and Computer Networks</td>
+			<td>DCCN</td>
+			<td class="grade" id="sub5">8</td>
+		  </tr>
+		  <tr class="head-4">
+			<td class="course" colspan="2">Total Grade</td>
+			<td class="grade-total" id="total"></td>
+		  </tr>
+		  <tr class="head-4">
+			<td class="course" colspan="2">Average Grade</td>
+			<td class="grade-avg" id="avg"></td>
+		  </tr>
+		</table>
+		<script text="javascript">
+		var total=0; var avg;
+		var table = document.getElementById("myTable");
+		var rowLength = table.rows.length;
+		for(var i=1;i<rowLength-1;i++){
+			var ocells = table.rows.item(i).cells;
+			var cellLength = ocells.length;
+			
+			total += Number(ocells.item(cellLength-1).innerHTML);
+		}
+		avg = total/5;
+		//console.log(total);
+		//console.log(avg);
+		document.getElementById("total").innerHTML = total;
+		document.getElementById("avg").innerHTML = avg;
+		</script>
+	</body>

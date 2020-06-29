@@ -1,0 +1,38 @@
+Java Script
+
+JavaScript ("JS" for short) is a full-fledged dynamic programming language that can add interactivity to a website. It was invented by Brendan Eich (co-founder of the Mozilla project), the Mozilla Foundation, and the Mozilla Corporation.
+Java Script can be included in the HTML file in the <script></script> tags. This canbe under either <Head></head> or <body></body> or in between.
+Java Script can also be included into the HTML file by the following:
+ <script src="name.js"></script>
+
+Data Types:
+String
+Number
+Boolean
+Array
+Object
+
+Comments can be and single-lined(//) or multi-lined(/*..*/.
+
+Operators:
+Arithmetic(+,-,*,/)
+Assignment (=)
+Equality(==)
+Not(!)
+Does-not-equal(!==)
+
+Functions
+Functions are a way of packaging functionality that you wish to reuse. It's possible to define a body of code as a function that executes when you call the function name in your code. This is a good alternative to repeatedly writing the same code.
+for example,
+function multiply(num1,num2){
+	let result = num1*num2;
+	return result;
+}
+calling the function: multiply(4,5);
+
+Events
+Real interactivity on a website requires events handlers. These are code structures that listen for activity in the browser, and run code in response. The most obvious example is handling the click event, which is fired by the browser when you click on something with your mouse. To demonstrate this, enter the following into your console, then click on the current webpage:
+
+documtent.querySelector('html').onclick = function(){
+	alert('try again!');
+}
