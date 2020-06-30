@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>HTML tables</title>
+		<title>Operators</title>
 		<style>
 		table, th, td {
 		  border: 4px solid gray; 
@@ -21,7 +21,31 @@
 		text-align: right;
 		}
 		tr:nth-child(even) {background-color: #f2f2f2;}
+		button{
+		margin-top: 20px;
+		padding: 10px;
+		color: blue;
+		font-size:20px;
+		}
 		</style>
+		<script text="javascript">
+		function calculate(){
+			var total=0; var avg;
+			var table = document.getElementById("myTable");
+			var rowLength = table.rows.length;
+			for(var i=1;i<rowLength-1;i++){
+				var ocells = table.rows.item(i).cells;
+				var cellLength = ocells.length;
+				
+				total += Number(ocells.item(cellLength-1).innerHTML);
+			}
+			avg = total/5;
+			//console.log(total);
+			//console.log(avg);
+			document.getElementById("total").innerHTML = total;
+			document.getElementById("avg").innerHTML = avg;
+		}
+		</script>
 	</head>
 	<body>
 		<h1><center>Semester Marks</center></h1>
@@ -65,20 +89,7 @@
 			<td class="grade-avg" id="avg"></td>
 		  </tr>
 		</table>
-		<script text="javascript">
-		var total=0; var avg;
-		var table = document.getElementById("myTable");
-		var rowLength = table.rows.length;
-		for(var i=1;i<rowLength-1;i++){
-			var ocells = table.rows.item(i).cells;
-			var cellLength = ocells.length;
-			
-			total += Number(ocells.item(cellLength-1).innerHTML);
-		}
-		avg = total/5;
-		//console.log(total);
-		//console.log(avg);
-		document.getElementById("total").innerHTML = total;
-		document.getElementById("avg").innerHTML = avg;
-		</script>
+		<button onclick="calculate()">Calculate</button>
+		
 	</body>
+</html>

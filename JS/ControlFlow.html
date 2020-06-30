@@ -1,0 +1,40 @@
+<html>
+<head><title>Control Flow Statements</title>
+<script>
+function fib(){
+	var n = document.getElementById("n").value;
+	var result = document.getElementById("err");
+	result.innerHTML="";
+	try{
+		if(n == "") throw "empty";
+		if(isNaN(n)) throw "not a number";
+		n = Number(n);
+		if(n>=10 && n<=100){
+			var n1=0; var n2=1; var n3; var msg="";
+			msg = msg+"The fibonacci series is as follows : ";
+			msg = msg+n1+" "+n2+" ";
+			for(var i=2;i<=n;i++){
+				n3=n1+n2;
+				n1 = n2;
+				n2 = n3;
+				msg = msg+n3+" ";
+			}
+			result.innerHTML = msg;
+		}
+		else{
+			if(n < 10) throw "less than 10";
+			if(n>100) throw "greater than 100";
+		}
+	}
+	catch(err){
+	 result.innerHTML = "Input is "+err;
+	}
+}
+</script>
+<body>
+<h1>Finding Fibonacci Numbers</h1>
+Enter the number: <input type="text" id="n" name="num">
+<button onclick="fib()">Calculate</button>
+<p id="err"></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Strings</title>
+		<script>
+		function getWords(){
+		var str = document.getElementById("description");
+		var text = str.textContent ? str.textContent : str.innerText;
+		var msg="";
+		var arr = text.split(" ");
+		msg = msg+"The fifth word is : "+arr[4]+"<br>";
+		msg = msg+"The seventh word is : "+arr[6]+"<br>";
+		msg = msg+"The tenth word is : "+arr[9]+"<br>";
+		document.getElementById("result").innerHTML = msg;
+		}
+		</script>
+	</head>
+	<body>
+	<div>
+		<h1><center><b>HTML</b></center></h1>
+		
+	</div>
+	<p id="description">HTML is the language in which most websites are written. HTML is used to create pages and make them functional.HTML was first created by Tim Berners-Lee, Robert Cailliau, and others starting in 1989. It stands for Hyper Text Markup Language.
+	Hypertext means that the document contains links that allow the reader to jump to other places in the document or to another document altogether. The latest version is known as HTML5.</p>
+	<button onclick="getWords()">Get the Words!</button>
+	<p id="result"></p>
+
+	</body>
+</html>
