@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+  span {
+    background: #def3ca;
+    padding: 3px;
+    float: left;
+  }
+  </style>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>Hide and Show</title>
+  </head>
+  <body>
+    <h1>This is the Hide and Show functionlaity!</h1>
+	 Do you want to hide the text? &nbsp; Then click on this button
+	<button type="button" id="hider" class="btn btn-danger">Hide!</button><br>
+	Do you want it back again? &nbsp; No problem! &nbsp; CLick here!
+	<button type="button" id="shower" class="btn btn-success">Show!</button>
+	<div>
+	  <span>Once</span> <span>upon</span> <span>a</span>
+	  <span>time</span> <span>there</span> <span>were</span>
+	  <span>three</span> <span>programmers...</span>
+	</div>
+	<script>
+	$( "#hider" ).click(function() {
+	  $( "span:last-child" ).hide( "fast", function() {
+		// Use arguments.callee so we don't need a named function
+		$( this ).prev().hide( "fast", arguments.callee );
+	  });
+	});
+	$( "#shower" ).click(function() {
+	  $( "span" ).show( 2000 );
+	});
+	</script>		
+    
+  </body>
+</html>
