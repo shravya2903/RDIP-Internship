@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Double Click</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script> 
+        $(document).ready(function() { 
+			$("#1").dblclick(function(){
+				$( this ).toggleClass("divClass2");
+			});
+            $("#Click-me").click(function() { 
+                $("#2").toggle(); 
+            }); 
+			$("#hide").click(function() {
+				$("#p1").hide();
+			});
+			$("#show").click(function() {
+				$("#p1").show();
+			});
+			$("#b1").click(function() {
+				$("#d1").fadeOut();
+			});
+			$("#b2").click(function() {
+				$("#d1").fadeIn();
+			});
+        }); 
+    </script> 
+    <style> 
+        .divClass { 
+            color: green; 
+            border: 5px solid black; 
+            width: 200px; 
+            text-align: center; 
+			background-color : #ccffff;
+        } 
+    </style> 
+<style> 
+.divClass1
+{
+    padding:50px;
+    text-align:center;
+    background-color:yellow;
+    border:solid 1px;
+}
+.divClass2
+{
+    padding:50px;
+    text-align:center;
+    background-color:grey;
+    border:solid 1px;
+}
+</style>
+</head>
+<body>
+
+<div class="divClass1" id="1">Double Click Me!</div><br>
+<div class="divClass" id="2">See this div disappear!</div><br>
+<button id="Click-me">Click to hide() and show() the above div</button><br> 
+<p id="p1">Welcome!</p>
+<button id="hide">Hide greeting</button>
+<button id="show">Show greeting</button>
+</div><br><br>
+<button id="b1">FadeOut</button>
+<div id="d1"><img src="q1.jpg" style="width: 100px; height: 100px;"></div><br>
+<button id="b2">FadeIn</button>
+
+</body>
+</html>
